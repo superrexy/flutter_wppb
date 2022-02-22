@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wppb/view/latihan.dart';
+import 'package:flutter_wppb/view/tugas.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.yellow,
       ),
-      home: latihan(),
+      home: tugas(),
     );
   }
 }
