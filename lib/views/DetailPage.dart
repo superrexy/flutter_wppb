@@ -37,6 +37,22 @@ class DetailPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Container(
+                    child: Column(
+                      children: const [
+                        Icon(Icons.access_time),
+                        Text("08:00 - 16:00"),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      children: const [
+                        Icon(Icons.attach_money),
+                        Text("Rp 10.000,-"),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

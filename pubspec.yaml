@@ -80,7 +80,7 @@ flutter:
                 weight: 200
               - asset: assets/fonts/Inter-Light.ttf
                 weight: 300
-              - asset: assets/fonts/Inter-Reguler.ttf
+              - asset: assets/fonts/Inter-Regular.ttf
                 weight: 400
               - asset: assets/fonts/Inter-Medium.ttf
                 weight: 500
