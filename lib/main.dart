@@ -53,6 +53,22 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    child: Column(
+                      children: const [
+                        Icon(Icons.calendar_month_rounded),
+                        Text("Open Everyday"),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
               margin: EdgeInsets.all(16),
               child: const Text(
                 "Museum inside a decommissioned Russian war submarine with tours & an adjacent park with cafes. Clean and well maintaned. Car park cost 10k, entrance fee 15k/person. You can see KRI Pasopati there, it is a russian whiskey class. You can also watch the video about the Indonesian Navy at the building beside the submarine",
