@@ -34,25 +34,25 @@ class DetailPage extends StatelessWidget {
                 children: [
                   Container(
                     child: Column(
-                      children: const [
-                        Icon(Icons.calendar_month_rounded),
-                        Text("Open Everyday"),
+                      children: [
+                        const Icon(Icons.calendar_month_rounded),
+                        Text(place.hariBuka),
                       ],
                     ),
                   ),
                   Container(
                     child: Column(
-                      children: const [
-                        Icon(Icons.access_time),
-                        Text("08:00 - 16:00"),
+                      children: [
+                        const Icon(Icons.access_time),
+                        Text(place.jamBuka),
                       ],
                     ),
                   ),
                   Container(
                     child: Column(
-                      children: const [
-                        Icon(Icons.attach_money),
-                        Text("Rp 10.000,-"),
+                      children: [
+                        const Icon(Icons.attach_money),
+                        Text(place.price),
                       ],
                     ),
                   ),
@@ -61,12 +61,24 @@ class DetailPage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.all(16),
-              child: const Text(
-                "Museum inside a decommissioned Russian war submarine with tours & an adjacent park with cafes. Clean and well maintaned. Car park cost 10k, entrance fee 15k/person. You can see KRI Pasopati there, it is a russian whiskey class. You can also watch the video about the Indonesian Navy at the building beside the submarine",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16),
+              child: Text(
+                place.description,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(fontSize: 16),
               ),
             ),
+            Container(
+                height: 150,
+                margin: const EdgeInsets.only(top: 16),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: ((context, index) {
+                    return Padding(
+                        padding: const EdgeInsets.all(4),
+                        child: Image.network(place.images[index]));
+                  }),
+                  itemCount: place.images.length,
+                ))
           ]),
         ));
   }
