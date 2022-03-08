@@ -1,24 +1,27 @@
 import "package:flutter/material.dart";
+import 'package:flutter_wppb/model/tourism_place.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  const DetailPage({Key? key, required this.place}) : super(key: key);
+
+  final TourismPlace place;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Prak 3 Flutter Layout"),
+          title: Text(place.name),
         ),
         body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Image.asset('assets/images/kapal.jpg'),
+            Image.asset(place.imageAsset),
             Container(
               margin: EdgeInsets.only(top: 16),
-              child: const Text(
-                "Surabaya Submarine Monument",
+              child: Text(
+                place.name,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
@@ -64,31 +67,6 @@ class DetailPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            Container(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/kapal_2.JPG'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/kapal_3.jpeg'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/kapal_4.jpg'),
-                  ),
-                ],
-              ),
-            )
           ]),
         ));
   }
