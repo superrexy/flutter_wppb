@@ -1,55 +1,36 @@
 import "package:flutter/material.dart";
+import 'package:flutter_wppb/components/tourism_list.dart';
 import 'package:flutter_wppb/model/tourism_place.dart';
-import "DetailPage.dart";
+import 'package:flutter_wppb/views/done_tourism_list.dart';
+import 'detail_page.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  MainScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  final List<TourismPlace> doneTourismPlaceList = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Wisata Surabaya")),
-        body: ListView.builder(
-          itemBuilder: (context, index) {
-            final TourismPlace place = tourismPlaceList[index];
-            return InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DetailPage(
-                      place: place,
-                    );
-                  }));
-                },
-                child: listItem(place));
-          },
-          itemCount: tourismPlaceList.length,
-        ));
-  }
-
-  Widget listItem(TourismPlace place) {
-    return Card(
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Expanded(flex: 1, child: Image.asset(place.imageAsset)),
-        Expanded(
-            flex: 2,
-            child: Padding(
-              padding: EdgeInsets.all(8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    place.name,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(place.location),
-                ],
-              ),
-            )),
-      ]),
+      appBar: AppBar(
+        title: const Text("Wisata Surabaya"),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DoneTourismList(
+                      doneTourismPlaceList: doneTourismPlaceList);
+                }));
+              },
+              icon: const Icon(Icons.done_outline))
+        ],
+      ),
+      body: TourismList(doneTourismPlaceList: doneTourismPlaceList),
     );
   }
 }
