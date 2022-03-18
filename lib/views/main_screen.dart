@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_wppb/components/tourism_list.dart';
-import 'package:flutter_wppb/model/tourism_place.dart';
 import 'package:flutter_wppb/views/done_tourism_list.dart';
-import 'detail_page.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -12,8 +10,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<TourismPlace> doneTourismPlaceList = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,14 +19,13 @@ class _MainScreenState extends State<MainScreen> {
           IconButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return DoneTourismList(
-                      doneTourismPlaceList: doneTourismPlaceList);
+                  return const DoneTourismList();
                 }));
               },
               icon: const Icon(Icons.done_outline))
         ],
       ),
-      body: TourismList(doneTourismPlaceList: doneTourismPlaceList),
+      body: TourismList(),
     );
   }
 }
