@@ -92,7 +92,6 @@ class TourController extends Controller
 
         if ($request->file('image_cover')) {
             Storage::disk('public')->delete($tour->image_cover);
-            $attr['slug'] = str()->slug($request->name . ' ' . Str::random(6));
             $images = $request->file('image_cover')->storeAs('image', $request->file('image_cover')->hashName(), 'public');
             $attr['image_cover'] = $images;
         }
