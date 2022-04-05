@@ -34,6 +34,8 @@ class Tours {
 }
 
 class DataTours {
+  static const String _baseUrl = 'http://10.206.0.54:8000/storage/';
+
   DataTours({
     required this.name,
     required this.slug,
@@ -58,7 +60,7 @@ class DataTours {
         description: json["description"],
         city: json["city"],
         location: json["location"],
-        imageCover: json["image_cover"],
+        imageCover: _baseUrl + json["image_cover"],
         price: Price.fromJson(json["price"]),
       );
 

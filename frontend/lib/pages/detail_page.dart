@@ -52,8 +52,7 @@ class _DetailPageState extends State<DetailPage> {
             height: 450,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                    "http://10.206.0.54:8000/storage/" + tour.imageCover),
+                image: NetworkImage(tour.imageCover),
                 fit: BoxFit.cover,
               ),
             ),

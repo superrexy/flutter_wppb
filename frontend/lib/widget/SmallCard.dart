@@ -32,8 +32,7 @@ class SmallCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "http://10.206.0.54:8000/storage/" + tour.imageCover),
+                  image: NetworkImage(tour.imageCover),
                 ),
               ),
             ),

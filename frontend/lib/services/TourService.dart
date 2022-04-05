@@ -53,7 +53,7 @@ class TourService {
 
     FormData data;
 
-    if (filepath != '') {
+    if (filepath != null) {
       String name = filepath!.split('/').last;
       data = FormData.fromMap({
         "name": body['name'],

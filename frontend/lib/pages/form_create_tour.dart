@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wppb/services/TourService.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:ffi';
 import 'dart:io';
 
 class FormCreateTour extends StatefulWidget {

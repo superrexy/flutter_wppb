@@ -252,8 +252,7 @@ class _FormEditTourState extends State<FormEditTour> {
                           label: const Text("Add Image")),
                       Card(
                         child: (_imageFileList == null)
-                            ? Image.network("http://10.206.0.54:8000/storage/" +
-                                tour.imageCover)
+                            ? Image.network(tour.imageCover)
                             : Image.file(
                                 File(_imageFileList!.first.path),
                                 width: double.infinity,
@@ -282,7 +281,7 @@ class _FormEditTourState extends State<FormEditTour> {
                           .updateTour(
                               body,
                               tour.slug,
-                              int.parse(_imageFileList!.length.toString()) != 0
+                              _imageFileList != null
                                   ? _imageFileList?.first.path
                                   : null)
                           .then((value) => ScaffoldMessenger.of(context)

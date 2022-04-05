@@ -31,8 +31,7 @@ class BigCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "http://10.206.0.54:8000/storage/" + tour.imageCover),
+                  image: NetworkImage(tour.imageCover),
                   fit: BoxFit.cover,
                 ),
               ),
