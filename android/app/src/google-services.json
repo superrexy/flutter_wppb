@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "532823366990",
+    "project_id": "wppb-notification",
+    "storage_bucket": "wppb-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532823366990:android:fed81f1c353e8f1d38121f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_wppb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532823366990-1gc7evergbhvhr2iu75in29601vgud2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqXkkvELhcHa15U8fsyIWABnT7JbfEwD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532823366990-1gc7evergbhvhr2iu75in29601vgud2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
